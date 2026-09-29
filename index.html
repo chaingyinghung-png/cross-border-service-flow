@@ -99,6 +99,21 @@
             font-size: 15px;
             margin-bottom: 5px;
         }
+        /* QR Code 圖片樣式 */
+        .qr-code {
+            display: block;
+            margin: 10px 0 10px 28px;
+            width: 150px;
+            height: 150px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 5px;
+            background: #fff;
+        }
+        .qr-code-small {
+            width: 120px;
+            height: 120px;
+        }
     </style>
 </head>
 <body>
@@ -106,7 +121,7 @@
 <div class="container">
     <h1>🚀 大陸零食類跨境電商營運服務流程引導</h1>
 
-    <!-- 步驟 1 (拆成兩段) -->
+    <!-- 步驟 1 -->
     <div class="step-card">
         <div class="step-title"><span>1️⃣</span> 大陸電商營業執照登記服務</div>
         
@@ -142,6 +157,8 @@
             流程：下載 WorldFirst APP → 掃描 QR Code 加入 WeChat。
         </div>
         <a href="#" target="_blank" class="step-link">🔗 萬里匯跨境開戶客服窗口</a>
+        <!-- QR Code 生成：將下方 src 的網址改成您實際的客服連結或 WeChat ID -->
+        <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=您的萬里匯客服連結" alt="萬里匯客服 QR Code">
         <div class="wechat-hint">（請掃描 QR Code 加入 WeChat 客服）</div>
     </div>
 
@@ -154,6 +171,8 @@
             平台入駐、選品上架與中轉倉對接，請加入專屬客服窗口。
         </div>
         <a href="#" target="_blank" class="step-link">🔗 平台/選品/中轉倉客服窗口</a>
+        <!-- QR Code 生成：將下方 src 的網址改成您實際的客服連結或 WeChat ID -->
+        <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=您的平台客服連結" alt="平台客服 QR Code">
         <div class="wechat-hint">（請掃描 QR Code 加入 WeChat 客服）</div>
     </div>
 
@@ -166,9 +185,12 @@
             物流配送對接，請下載跑跑虎集運 APP 並聯繫客服。
         </div>
         <a href="#" target="_blank" class="step-link">🔗 兩岸快運跨境物流客服窗口</a>
+        <!-- QR Code 生成：將下方 src 的網址改成您實際的客服連結或 WeChat ID -->
+        <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=您的物流客服連結" alt="物流客服 QR Code">
         <div class="wechat-hint">（請下載「跑跑虎集運」APP 並加入 WeChat 客服）</div>
     </div>
 
 </div>
+
 </body>
 </html>
