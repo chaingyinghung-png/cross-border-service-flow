@@ -34,7 +34,6 @@
             border-left: 8px solid #4caf50;
             overflow: hidden;
         }
-        /* 各步驟專屬顏色 */
         .step-card.step1 { border-left-color: #4caf50; }
         .step-card.step2 { border-left-color: #2196f3; }
         .step-card.step3 { border-left-color: #ff9800; }
@@ -96,7 +95,6 @@
             margin-left: 28px;
             margin-top: 8px;
         }
-        /* 鎖定狀態樣式 */
         .locked-message {
             display: inline-block;
             background-color: #f5f5f5;
@@ -120,7 +118,6 @@
             font-size: 15px;
             margin-bottom: 5px;
         }
-        /* 圖片樣式 */
         .qr-code {
             display: block;
             margin: 12px 0 12px 28px;
@@ -151,7 +148,6 @@
     <div class="step-card step1">
         <div class="step-title"><span>1️⃣</span> 大陸電商營業執照登記服務</div>
         
-        <!-- 1-1 填寫表單與匯款 -->
         <div class="sub-step">
             <div class="sub-step-title">1-1 填寫收費說明表單並完成匯款</div>
             <div class="step-desc" style="padding-left: 0;">
@@ -161,17 +157,14 @@
             <a href="https://forms.gle/cZNwvizbRFWQt2vLA" target="_blank" class="step-link" style="margin-left: 0;">📝 填寫營業執照登記表單</a>
         </div>
 
-        <!-- 1-2 審核通過後開啟客服窗口 (鎖定狀態) -->
         <div class="sub-step">
             <div class="sub-step-title">1-2 審核通過後，開啟客服窗口</div>
             <div class="step-desc" style="padding-left: 0;">
-                待財務確認款項入帳並審核通過後，即可點擊下方連結，進入客服窗口，並接續申請 <strong>2️⃣ 萬里匯跨境開戶</strong>。
+                待財務確認款項入帳並審核通過後，即可掃描下方 QR Code 加入官方客服 Line。
             </div>
             <!-- 🔒 審核通過後，請將下方註解解除，並移除 locked-message -->
-            <!-- <a href="您的客服窗口連結" target="_blank" class="step-link" style="margin-left: 0;">🔗 大陸電商營業執照登記客服窗口</a> -->
-            <div class="locked-message">🔒 待財務確認核銷後開啟</div>
-            <!-- QR Code 圖片 (審核通過後顯示) -->
             <!-- <img class="qr-code" src="qr1-license.png" alt="營業執照登記客服 QR Code"> -->
+            <div class="locked-message">🔒 待財務確認核銷後開啟</div>
         </div>
     </div>
 
@@ -181,15 +174,11 @@
     <div class="step-card step2">
         <div class="step-title"><span>2️⃣</span> 萬里匯 跨境開戶申請</div>
         <div class="step-desc">
-            完成執照登記後，請點擊下方連結申請萬里匯帳戶。<br>
+            完成執照登記後，請下載 WorldFirst APP 並掃描 QR Code 加入 WeChat。<br>
             流程：下載 WorldFirst APP → 掃描 QR Code 加入 WeChat。
         </div>
         
-        <!-- 萬里匯 APP 圖片 -->
         <img class="app-icon" src="app-worldfirst.png" alt="WorldFirst APP">
-        
-        <a href="#" target="_blank" class="step-link">🔗 萬里匯跨境開戶客服窗口</a>
-        <!-- 萬里匯 QR Code -->
         <img class="qr-code" src="qr2-worldfirst.png" alt="萬里匯客服 QR Code">
         <div class="wechat-hint">（請掃描 QR Code 加入 WeChat 客服）</div>
     </div>
@@ -200,7 +189,6 @@
     <div class="step-card step3">
         <div class="step-title"><span>3️⃣</span> 大陸電商平台保證金服務收費</div>
         
-        <!-- 3-1 填寫表單與匯款 -->
         <div class="sub-step">
             <div class="sub-step-title">3-1 填寫平台保證金表單並完成匯款</div>
             <div class="step-desc" style="padding-left: 0;">
@@ -211,17 +199,14 @@
             <a href="您的平台保證金表單連結" target="_blank" class="step-link" style="margin-left: 0;">📝 填寫平台保證金表單</a>
         </div>
 
-        <!-- 3-2 審核通過後開啟客服窗口 (鎖定狀態) -->
         <div class="sub-step">
             <div class="sub-step-title">3-2 審核通過後，開啟客服窗口</div>
             <div class="step-desc" style="padding-left: 0;">
-                待財務確認款項入帳並審核通過後，即可點擊下方連結，進入客服窗口，並接續申請 <strong>4️⃣ 零食選品上架</strong>與 <strong>6️⃣ 中轉倉</strong>。
+                待財務確認款項入帳並審核通過後，即可掃描下方 QR Code 加入客服窗口。
             </div>
             <!-- 🔒 審核通過後，請將下方註解解除，並移除 locked-message -->
-            <!-- <a href="您的客服窗口連結" target="_blank" class="step-link" style="margin-left: 0;">🔗 平台/選品/中轉倉客服窗口</a> -->
-            <div class="locked-message">🔒 待財務確認核銷後開啟</div>
-            <!-- QR Code 圖片 (審核通過後顯示) -->
             <!-- <img class="qr-code" src="qr346-platform.png" alt="平台/選品/中轉倉客服 QR Code"> -->
+            <div class="locked-message">🔒 待財務確認核銷後開啟</div>
         </div>
     </div>
 
@@ -231,10 +216,8 @@
     <div class="step-card step4">
         <div class="step-title"><span>4️⃣ 6️⃣</span> 大陸電商平台 / 零食選品上架 / 中轉倉</div>
         <div class="step-desc">
-            平台入駐、選品上架與中轉倉對接，請加入專屬客服窗口。
+            平台入駐、選品上架與中轉倉對接，請掃描 QR Code 加入專屬客服窗口。
         </div>
-        <a href="#" target="_blank" class="step-link">🔗 平台/選品/中轉倉客服窗口</a>
-        <!-- 平台/選品/中轉倉 QR Code -->
         <img class="qr-code" src="qr346-platform.png" alt="平台/選品/中轉倉客服 QR Code">
         <div class="wechat-hint">（請掃描 QR Code 加入 WeChat 客服）</div>
     </div>
@@ -245,17 +228,16 @@
     <div class="step-card step5">
         <div class="step-title"><span>5️⃣</span> 兩岸快運 跨境物流</div>
         <div class="step-desc">
-            物流配送對接，請下載跑跑虎集運 APP 並聯繫客服。<br>
+            物流配送對接，請下載跑跑虎集運 APP 並掃描 QR Code 加入官方客服 Line。<br>
             流程：下載跑跑虎集運 APP → 掃描 QR Code 加入官方客服 Line。
         </div>
         
-        <!-- 跑跑虎集運 APP 圖片 -->
         <img class="app-icon" src="app-paopaohu.png" alt="跑跑虎集運 APP">
-        
-        <a href="#" target="_blank" class="step-link">🔗 兩岸快運跨境物流客服窗口</a>
-        <!-- 兩岸快運 QR Code -->
         <img class="qr-code" src="qr5-logistics.png" alt="兩岸快運物流客服 QR Code">
         <div class="wechat-hint">（請掃描 QR Code 加入官方客服 Line）</div>
     </div>
+
+</div>
+
 </body>
 </html>
