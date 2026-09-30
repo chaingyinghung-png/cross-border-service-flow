@@ -7,11 +7,12 @@
     <style>
         body {
             font-family: '微軟正黑體', Arial, sans-serif;
-            background-color: #f4f9f4;
+            background: linear-gradient(135deg, #e8f5e9 0%, #fff8e1 100%);
             color: #333;
             margin: 0;
             padding: 20px;
             line-height: 1.6;
+            min-height: 100vh;
         }
         .container {
             max-width: 800px;
@@ -20,25 +21,42 @@
         h1 {
             text-align: center;
             color: #2e7d32;
-            font-size: 24px;
+            font-size: 26px;
             margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
         .step-card {
             background: #ffffff;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            border-left: 6px solid #4caf50;
+            border-radius: 16px;
+            padding: 20px 20px 20px 0;
+            margin-bottom: 24px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            border-left: 8px solid #4caf50;
+            overflow: hidden;
         }
+        /* 各步驟專屬顏色 */
+        .step-card.step1 { border-left-color: #4caf50; }
+        .step-card.step2 { border-left-color: #2196f3; }
+        .step-card.step3 { border-left-color: #ff9800; }
+        .step-card.step4 { border-left-color: #9c27b0; }
+        .step-card.step5 { border-left-color: #f44336; }
+
         .step-title {
             font-size: 18px;
             font-weight: bold;
             color: #1b5e20;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
+            padding: 8px 16px;
+            border-radius: 0 8px 8px 0;
         }
+        .step1 .step-title { background: #e8f5e9; color: #2e7d32; }
+        .step2 .step-title { background: #e3f2fd; color: #1565c0; }
+        .step3 .step-title { background: #fff3e0; color: #e65100; }
+        .step4 .step-title { background: #f3e5f5; color: #6a1b9a; }
+        .step5 .step-title { background: #ffebee; color: #c62828; }
+
         .step-title span {
             margin-right: 8px;
             font-size: 20px;
@@ -53,20 +71,22 @@
             display: inline-block;
             background-color: #e8f5e9;
             color: #2e7d32;
-            padding: 8px 16px;
-            border-radius: 6px;
+            padding: 10px 18px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
             font-size: 14px;
             margin-left: 28px;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            border: 1px solid #c8e6c9;
         }
         .step-link:hover {
             background-color: #c8e6c9;
+            transform: translateY(-2px);
         }
         .flow-arrow {
             text-align: center;
-            font-size: 24px;
+            font-size: 28px;
             color: #81c784;
             margin: -10px 0 10px 0;
         }
@@ -74,14 +94,15 @@
             font-size: 13px;
             color: #888;
             margin-left: 28px;
-            margin-top: 5px;
+            margin-top: 8px;
         }
+        /* 鎖定狀態樣式 */
         .locked-message {
             display: inline-block;
             background-color: #f5f5f5;
             color: #999;
-            padding: 8px 16px;
-            border-radius: 6px;
+            padding: 10px 18px;
+            border-radius: 8px;
             font-size: 14px;
             margin-left: 28px;
             font-weight: bold;
@@ -99,20 +120,25 @@
             font-size: 15px;
             margin-bottom: 5px;
         }
-        /* QR Code 圖片樣式 */
+        /* 圖片樣式 */
         .qr-code {
             display: block;
-            margin: 10px 0 10px 28px;
+            margin: 12px 0 12px 28px;
             width: 150px;
             height: 150px;
             border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 5px;
+            border-radius: 12px;
+            padding: 8px;
             background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-        .qr-code-small {
-            width: 120px;
-            height: 120px;
+        .app-icon {
+            display: block;
+            margin: 12px 0 12px 28px;
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -121,8 +147,8 @@
 <div class="container">
     <h1>🚀 大陸零食類跨境電商營運服務流程引導</h1>
 
-    <!-- 步驟 1 -->
-    <div class="step-card">
+    <!-- ================= 步驟 1：營業執照登記 ================= -->
+    <div class="step-card step1">
         <div class="step-title"><span>1️⃣</span> 大陸電商營業執照登記服務</div>
         
         <!-- 1-1 填寫表單與匯款 -->
@@ -135,62 +161,101 @@
             <a href="https://forms.gle/cZNwvizbRFWQt2vLA" target="_blank" class="step-link" style="margin-left: 0;">📝 填寫營業執照登記表單</a>
         </div>
 
-        <!-- 1-2 審核通過後開啟客服窗口 -->
+        <!-- 1-2 審核通過後開啟客服窗口 (鎖定狀態) -->
         <div class="sub-step">
             <div class="sub-step-title">1-2 審核通過後，開啟客服窗口</div>
             <div class="step-desc" style="padding-left: 0;">
                 待財務確認款項入帳並審核通過後，即可點擊下方連結，進入客服窗口，並接續申請 <strong>2️⃣ 萬里匯跨境開戶</strong>。
             </div>
-            <!-- 審核通過後，請將下方註解解除，並移除 locked-message -->
+            <!-- 🔒 審核通過後，請將下方註解解除，並移除 locked-message -->
             <!-- <a href="您的客服窗口連結" target="_blank" class="step-link" style="margin-left: 0;">🔗 大陸電商營業執照登記客服窗口</a> -->
             <div class="locked-message">🔒 待財務確認核銷後開啟</div>
+            <!-- QR Code 圖片 (審核通過後顯示) -->
+            <!-- <img class="qr-code" src="qr1-license.png" alt="營業執照登記客服 QR Code"> -->
         </div>
     </div>
 
     <div class="flow-arrow">↓</div>
 
-    <!-- 步驟 2 -->
-    <div class="step-card">
+    <!-- ================= 步驟 2：萬里匯開戶 ================= -->
+    <div class="step-card step2">
         <div class="step-title"><span>2️⃣</span> 萬里匯 跨境開戶申請</div>
         <div class="step-desc">
             完成執照登記後，請點擊下方連結申請萬里匯帳戶。<br>
             流程：下載 WorldFirst APP → 掃描 QR Code 加入 WeChat。
         </div>
+        
+        <!-- 萬里匯 APP 圖片 -->
+        <img class="app-icon" src="app-worldfirst.png" alt="WorldFirst APP">
+        
         <a href="#" target="_blank" class="step-link">🔗 萬里匯跨境開戶客服窗口</a>
-        <!-- QR Code 生成：將下方 src 的網址改成您實際的客服連結或 WeChat ID -->
-        <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=您的萬里匯客服連結" alt="萬里匯客服 QR Code">
+        <!-- 萬里匯 QR Code -->
+        <img class="qr-code" src="qr2-worldfirst.png" alt="萬里匯客服 QR Code">
         <div class="wechat-hint">（請掃描 QR Code 加入 WeChat 客服）</div>
     </div>
 
     <div class="flow-arrow">↓</div>
 
-    <!-- 步驟 3, 4, 6 -->
-    <div class="step-card">
-        <div class="step-title"><span>3️⃣ 4️⃣ 6️⃣</span> 大陸電商平台 / 零食選品上架 / 中轉倉</div>
+    <!-- ================= 步驟 3：平台保證金 ================= -->
+    <div class="step-card step3">
+        <div class="step-title"><span>3️⃣</span> 大陸電商平台保證金服務收費</div>
+        
+        <!-- 3-1 填寫表單與匯款 -->
+        <div class="sub-step">
+            <div class="sub-step-title">3-1 填寫平台保證金表單並完成匯款</div>
+            <div class="step-desc" style="padding-left: 0;">
+                請先填寫平台保證金表單，並完成匯款。<br>
+                流程：匯款完成 → 財務確認核銷 → 提交表單 → 審核
+            </div>
+            <!-- 請將下方連結替換為平台保證金的表單連結 -->
+            <a href="您的平台保證金表單連結" target="_blank" class="step-link" style="margin-left: 0;">📝 填寫平台保證金表單</a>
+        </div>
+
+        <!-- 3-2 審核通過後開啟客服窗口 (鎖定狀態) -->
+        <div class="sub-step">
+            <div class="sub-step-title">3-2 審核通過後，開啟客服窗口</div>
+            <div class="step-desc" style="padding-left: 0;">
+                待財務確認款項入帳並審核通過後，即可點擊下方連結，進入客服窗口，並接續申請 <strong>4️⃣ 零食選品上架</strong>與 <strong>6️⃣ 中轉倉</strong>。
+            </div>
+            <!-- 🔒 審核通過後，請將下方註解解除，並移除 locked-message -->
+            <!-- <a href="您的客服窗口連結" target="_blank" class="step-link" style="margin-left: 0;">🔗 平台/選品/中轉倉客服窗口</a> -->
+            <div class="locked-message">🔒 待財務確認核銷後開啟</div>
+            <!-- QR Code 圖片 (審核通過後顯示) -->
+            <!-- <img class="qr-code" src="qr346-platform.png" alt="平台/選品/中轉倉客服 QR Code"> -->
+        </div>
+    </div>
+
+    <div class="flow-arrow">↓</div>
+
+    <!-- ================= 步驟 4, 6：平台/選品/中轉倉 ================= -->
+    <div class="step-card step4">
+        <div class="step-title"><span>4️⃣ 6️⃣</span> 大陸電商平台 / 零食選品上架 / 中轉倉</div>
         <div class="step-desc">
             平台入駐、選品上架與中轉倉對接，請加入專屬客服窗口。
         </div>
         <a href="#" target="_blank" class="step-link">🔗 平台/選品/中轉倉客服窗口</a>
-        <!-- QR Code 生成：將下方 src 的網址改成您實際的客服連結或 WeChat ID -->
-        <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=您的平台客服連結" alt="平台客服 QR Code">
+        <!-- 平台/選品/中轉倉 QR Code -->
+        <img class="qr-code" src="qr346-platform.png" alt="平台/選品/中轉倉客服 QR Code">
         <div class="wechat-hint">（請掃描 QR Code 加入 WeChat 客服）</div>
     </div>
 
     <div class="flow-arrow">↓</div>
 
-    <!-- 步驟 5 -->
-    <div class="step-card">
+    <!-- ================= 步驟 5：兩岸快運物流 ================= -->
+    <div class="step-card step5">
         <div class="step-title"><span>5️⃣</span> 兩岸快運 跨境物流</div>
         <div class="step-desc">
-            物流配送對接，請下載跑跑虎集運 APP 並聯繫客服。
+            物流配送對接，請下載跑跑虎集運 APP 並聯繫客服。<br>
+            流程：下載跑跑虎集運 APP → 掃描 QR Code 加入官方客服 Line。
         </div>
+        
+        <!-- 跑跑虎集運 APP 圖片 -->
+        <img class="app-icon" src="app-paopaohu.png" alt="跑跑虎集運 APP">
+        
         <a href="#" target="_blank" class="step-link">🔗 兩岸快運跨境物流客服窗口</a>
-        <!-- QR Code 生成：將下方 src 的網址改成您實際的客服連結或 WeChat ID -->
-        <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=您的物流客服連結" alt="物流客服 QR Code">
-        <div class="wechat-hint">（請下載「跑跑虎集運」APP 並加入 WeChat 客服）</div>
+        <!-- 兩岸快運 QR Code -->
+        <img class="qr-code" src="qr5-logistics.png" alt="兩岸快運物流客服 QR Code">
+        <div class="wechat-hint">（請掃描 QR Code 加入官方客服 Line）</div>
     </div>
-
-</div>
-
 </body>
 </html>
